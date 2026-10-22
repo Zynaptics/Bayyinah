@@ -1,0 +1,21 @@
+# Added later, when real models replace the stubs (install on top of requirements.txt).
+# Pin exact versions after your first working install (pip freeze).
+torch
+torchvision
+torchaudio
+timm
+transformers
+datasets
+scikit-learn
+pandas
+numpy
+librosa
+soundfile
+opencv-python-headless
+mediapipe
+pytorch-grad-cam
+shap
+piexif
+pillow
+matplotlib
+joblib

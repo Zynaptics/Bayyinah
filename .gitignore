@@ -1,0 +1,25 @@
+# data and weights never go in Git
+datasets/*
+!datasets/README.md
+!datasets/urdu_collection_template.csv
+model_weights/*
+!model_weights/.gitkeep
+*.pt
+*.pth
+*.pkl
+*.ckpt
+logs/*.csv
+# python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.pytest_cache/
+# node
+node_modules/
+.next/
+# secrets / OS
+.env
+.env.local
+.DS_Store
+data/
