@@ -1,9 +1,8 @@
 # Bayyinah
 
-Multi-modal media authenticity checker (image, text, audio; video as an extension), with
-Urdu and Roman Urdu text support and visual explanations. Solo FYP, 16 weeks.
+Multi-modal media authenticity checker (image, text, audio; video as an extension)
 
-Current state: **Week 1 scaffold with dashboard.** Pages: Overview (real counts from your checks),
+Current state: **scaffold with dashboard.** Pages: Overview (real counts from your checks),
 New check, History (reopen or delete past results), Models (status of each check). The backend
 returns fixed mock results for now (the UI shows a MOCK badge) and stores a summary of each check
 in SQLite (`backend/data/`, git-ignored). Uploaded files are never stored. Real models replace the stubs one
@@ -49,20 +48,8 @@ Everything in Docker: `docker compose up --build`.
     splits/     commit the official FaceForensics++ split files here
     notebooks/  Colab/Jupyter experiments (image, text, audio)
 
-## Replacing a stub with a real model
 
-| When | Replace | Keep unchanged |
-|---|---|---|
-| Weeks 4-6 | the body of `backend/routers/image.py` | request/response shape, UI |
-| Weeks 7-10 | `backend/routers/text.py` | same |
-| Weeks 11-13 | `backend/routers/audio.py` | same |
-| Week 14 (only if gate passes) | `backend/routers/video.py`; set `ENABLED.video = true` in `frontend/lib/limits.ts` | same |
-
-Set `MODEL_VERSION` to the real model name so the MOCK badge disappears. Install
-`requirements-ml.txt` when you start the first real model, then pin versions.
-Delete `backend/stubs.py` at the end.
-
-## Rules to keep (from the plan review)
+## Rules to keep
 
 - Name image class folders `0_real` and `1_fake` (class 1 = fake everywhere).
 - Use the official FF++ split files; never split by frame. Keep a cross-dataset holdout (Celeb-DF) untouched until final evaluation.
